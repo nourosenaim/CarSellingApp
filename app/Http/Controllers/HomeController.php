@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
-class CarController extends Controller
+class HomeController extends Controller
 {
     public function index(){
-        return "CAR Controller Index Methos";
+        return view('home.index');
     }
 
 }

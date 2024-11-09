@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\CarController;
+
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
+
+Route::get('/home',[HomeController::class,'index']);
 
 //Route::get('/about',function(){
 //    return view('about');
 //});
 
-Route::view('/about','about')->name('about');
+//Route::view('/about','about')->name('about');
 
 
 //group Route
-Route::controller(CarController::class)->group(function(){
-    Route::get('/car',[CarController::class,'index'])->name('car');
-    Route::get('/car-collection','carCollection')->name('car-collection');
-});
+//Route::controller(CarController::class)->group(function(){
+//    Route::get('/car',[CarController::class,'index'])->name('car');
+//    Route::get('/car-collection','carCollection')->name('car-collection');
+//});
+//we can 'exclude and include' method using 'except and only' method
+//Route::resource('/product',ProductController::class)->except('destroy');
+//Route::resource('/product',ProductController::class)->only('destroy');
+
+//Route::resource('/product',ProductController::class);
+
